@@ -1,0 +1,18 @@
+# GET
+# Busca categoria
+###
+
+GET http://localhost:3000/categories/1
+Content-Type: application/json
+
+# POST
+# Criar categoria
+###
+
+POST http://localhost:3000/categories
+Content-Type: application/json
+user: 2
+
+{
+  "type": "Batata-frita"
+}

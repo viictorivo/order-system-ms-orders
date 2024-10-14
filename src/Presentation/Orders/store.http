@@ -1,0 +1,62 @@
+# POST
+# Criar Loja
+###
+POST https://api.mercadopago.com/users/156066762/stores
+Content-Type: application/json
+Authorization: Bearer TEST-5034444343472741-050912-53995814c25f2defa35c9887817f419a-156066762
+
+{
+  "external_id": "SUC001",
+  "name": "Lanchonete Fiap",
+  "location": {
+    "street_number": "10",
+    "street_name": "Rua: teste",
+    "city_name": "São Paulo",
+    "state_name": "São Paulo",
+    "latitude": -23.1056837,
+    "longitude": -45.9265625
+  }
+}
+
+# Criar Caixa
+###
+POST https://api.mercadopago.com/pos
+Content-Type: application/json
+Authorization: Bearer TEST-5034444343472741-050912-53995814c25f2defa35c9887817f419a-156066762
+
+{
+  "category": 5611203,
+  "external_id": "SUC001POS001",
+  "external_store_id": "SUC001",
+  "fixed_amount": true,
+  "name": "Caixa Principal",
+  "store_id": 61030915
+}
+
+# Buscar Caixa
+###
+GET https://api.mercadopago.com/pos/100330006
+Content-Type: application/json
+Authorization: Bearer TEST-5034444343472741-050912-53995814c25f2defa35c9887817f419a-156066762
+
+# deletar Caixa
+###
+DELETE https://api.mercadopago.com/pos/100330006
+Content-Type: application/json
+Authorization: Bearer TEST-5034444343472741-050912-53995814c25f2defa35c9887817f419a-156066762
+
+
+# {
+#   "id": "61030915",
+#   "name": "Lanchonete Fiap",
+#   "date_creation": "2024-05-11T01:07:46.603Z",
+#   "location": {
+#     "address_line": "Rua: teste 10, São Paulo, São Paulo, Brasil",
+#     "latitude": -23.1056837,
+#     "longitude": -45.9265625,
+#     "id": "BR",
+#     "type": "country",
+#     "city": "São Paulo"
+#   },
+#   "external_id": "SUC001"
+# }

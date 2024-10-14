@@ -1,0 +1,38 @@
+# GET
+# Busca pedido
+###
+
+GET http://localhost:3000/orders/2
+Content-Type: application/json
+
+# POST
+# Criar pedido
+###
+
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+  "customerID": 1,
+  "amount": 28,
+  "orderItens": [
+    {
+      "name": "coca-cola",
+      "quantity": 1,
+      "priceUnit": 5,
+      "productID": 2
+    },
+    {
+      "name": "X-bacon",
+      "quantity": 1,
+      "priceUnit": 20,
+      "productID": 3
+    },
+    {
+      "name": "sorvete chocolate",
+      "quantity": 1,
+      "priceUnit": 3,
+      "productID": 4
+    }
+  ]
+}

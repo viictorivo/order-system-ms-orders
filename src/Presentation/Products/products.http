@@ -1,0 +1,20 @@
+# GET
+# Busca Produtos
+###
+
+GET http://localhost:3000/products/1
+Content-Type: application/json
+
+# POST
+# Criar Produtos
+###
+
+POST http://localhost:3000/products
+Content-Type: application/json
+user: 2
+
+{
+  "name": "Combo supreme",
+  "priceUnit": 35,
+  "categoryID": 4
+}
