@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3'
 
 services:
   pgsql:
@@ -13,33 +13,11 @@ services:
       POSTGRES_USER: pguser
       POSTGRES_PASSWORD: pgpassword
 
-  api:
-    depends_on:
-      - pgsql
-    container_name: nestjs
-    image: nestjs-dev
+  adminer:
+    image: adminer
     restart: always
-    build:
-      context: .
-      dockerfile: Dockerfile
-    env_file: ./.env
     ports:
-      - $NODE_LOCAL_PORT:$NODE_LOCAL_PORT
-    environment:
-      - DATABASE_URL=$DATABASE_URL
-      - TOKEN_MERCADO_PAGO=$TOKEN_MERCADO_PAGO
-      - USERID=$USERID
-      - POSID=$POSID
-    stdin_open: true
-    tty: true
-    volumes:
-      - .:/app
-      - /app/node_modules
-    networks:
-      - orderSystem
+      - 8080:8080
 
 volumes:
-  db:
-networks:
-  orderSystem:
-    driver: bridge
+  pg-data:
